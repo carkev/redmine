@@ -1,0 +1,13 @@
+version: '3.8'
+services:
+  redmine:
+    image: redmine:latest
+    restart: always
+    ports:
+      - 80:3000
+    volumes:
+      - ./sqlite:/usr/src/redmine/sqlite
+      - ./files:/usr/src/redmine/files
+      - ./plugins:/usr/src/redmine/plugins
+      - ./vendor/plugins:/usr/src/redmine/vendor/plugins
+      - ./public/themes:/usr/src/redmine/public/themes
